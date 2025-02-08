@@ -6,17 +6,17 @@ let btnPrev = document.querySelector(".btn-prev");
 btnNext.addEventListener('click', NextSlide);
 btnPrev.addEventListener('click', PreviousSlide);
 
-function NextSlide(){
-    offset = offset + 256;
-    if(offset > 768){
-        offset = 768;
+function NextSlide() {
+    offset = offset + 266;
+    if (offset > 798) {
+        offset = 798;
     }
     sliderLine.style.left = -offset + "px";
 }
 
-function PreviousSlide(){
-    offset = offset - 256;
-    if(offset < 0){
+function PreviousSlide() {
+    offset = offset - 266;
+    if (offset < 0) {
         offset = 0;
     }
     sliderLine.style.left = -offset + "px";
