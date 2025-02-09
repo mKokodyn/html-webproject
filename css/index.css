@@ -1,65 +1,138 @@
 @import "global.css";
 
-/* .team-section__carousel {
-    margin: 15px;
-    display: grid;
-    grid-template-columns: 32px 1fr 32px;
-  } */
-/* .carousel__image-wrapper {
-    padding: 15px;
-  } */
-.carousel__image {
-    
-    margin-left: 5px;
-    margin-right: 5px;
-    border-radius: 5px;
+.team-section {
+    background-image: url(/img/about-our-team-background-color.jpg);
+    justify-content: center;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 90px;
+    padding-bottom: 90px;
 }
 
-.carousel__name {
-    margin-top: 20px;
+.team-section__title {
+    font-family: var(--accent-font);
+    color: var(--section-name-accent-color);
+    font-size: 16px;
+}
+
+.team-section__subtitle {
+    font-family: var(--block-title-font);
     color: var(--about-subtitle-text-color);
-    font-size: 24px;
-    font-family: var(--font-family-primary);
+    font-size: 38px;
+    margin-top: 20px;
 }
 
-.carousel__role {
+.team-section__description {
+    font-family: var(--font-family-primary);
+    color: var(--about-description-text-color);
+    font-size: 20px;
     margin-top: 25px;
+}
+
+.team-section__details {
+    font-family: var(--font-family-primary);
     color: var(--about-details-text-color);
     font-size: 17px;
-    font-family: var(--font-family-primary);
+    margin-top: 25px;
 }
 
+.team-section__intro {
+    margin: 15px;
+}
+
+.carousel__name,
+.carousel__role {
+    margin-left: 20px;
+}
 
 .our-team__container {
     max-width: 1024px;
     margin: 30px auto;
-    padding: 30px;
-    /* background-color: lightslategray; */
+    /* padding: 30px; */
 }
 
 .our-team__slider {
-    width: 266px;
-    border: 2px solid black;
-    margin: 30px auto;
+    width: 256px;
+    /* border: 2px solid black; */
+    margin: 20px auto;
     overflow: hidden;
 }
 
 .our-team__slider__line {
     /* height: 328.2px; */
-    /* width: 1024px; */
+    max-width: none;
+    width: 1024px;
     display: flex;
     position: relative;
     left: 0;
     transition: all ease 1s;
+
+}
+.carousel__name {
+    margin-top: 20px;
+    color: var(--about-subtitle-text-color);
+    font-size: 24px;
+    font-family: var(--font-family-primary);
+  }
+  .carousel__role {
+    margin-top: 25px;
+    color: var(--about-details-text-color);
+    font-size: 17px;
+    font-family: var(--font-family-primary);
+  }
+
+.carousel__image {
+    padding: 10px;
+    border-radius: 15px;
 }
 
 @media (min-width: 768px) {
-    .our-team__slider{
-        width: 532px;
+    .our-team__slider {
+        width: 512px;
+    }
+
+    .team-section {
+        display: flex;
+        flex-direction: row;
+
+        .our-team-carousel{
+            width: 512px;
+        }
+
+        /* .team-section__intro,
+        .team-section__details {
+            flex: 33% 67%;
+        } */
     }
 }
-@media (min-width: 1024px) {
-    .our-team__slider{
-        width: 798px;
+
+    /* @media (min-width: 992px) {
+    .team-section {
+      display: flex;
+      flex-direction: row;
+  
+      .team-section__intro,
+      .team-section__details {
+        flex: 33% 67%;
+      }
+    } */
+
+    @media (min-width: 1024px) {
+        .our-team__slider {
+            width: 768px;
+        }
+
+        .team-section {
+            /* display: flex;
+            flex-direction: row; */
+    
+            .our-team-carousel{
+                width: 768px;
+            }
+    
+            /* .team-section__intro,
+            .team-section__details {
+                flex: 33% 67%;
+            } */
+        }
     }
-}
