@@ -5,8 +5,9 @@
     justify-content: center;
     padding-left: 45px;
     padding-right: 45px;
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    min-width: 375px;
 }
 
 .team-section__title {
@@ -38,6 +39,7 @@
 
 .team-section__intro {
     margin: 15px;
+    min-width: 200px;
 }
 
 .carousel__name,
@@ -85,6 +87,36 @@
     padding: 10px;
     border-radius: 15px;
 }
+.btn-next, .btn-prev{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-color: #fbc751;
+    border: 0px;
+    opacity: 85%;
+    .carousel__arrow{
+        width: 20px;
+        vertical-align: middle;
+        
+
+    }
+}
+
+.btn-prev{
+    transform: rotate(180deg);
+    position: absolute;
+    z-index: 1;
+    :hover{
+        cursor: pointer;
+    }
+}
+.btn-next{
+    position: absolute;
+    z-index: 1;
+    :hover{
+        cursor: pointer;
+    }
+}
 
 @media (min-width: 768px) {
     .our-team__slider {
@@ -98,11 +130,6 @@
         .our-team-carousel{
             width: 512px;
         }
-
-        /* .team-section__intro,
-        .team-section__details {
-            flex: 33% 67%;
-        } */
     }
 }
 
@@ -123,8 +150,7 @@
         }
 
         .team-section {
-            /* display: flex;
-            flex-direction: row; */
+            /* padding-left: 45px; */
     
             .our-team-carousel{
                 width: 768px;
