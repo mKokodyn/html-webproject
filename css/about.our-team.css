@@ -85,6 +85,7 @@
 .carousel__image {
     padding: 10px;
     border-radius: 15px;
+    width: 256px;
 }
 .btn-next, .btn-prev{
     height: 32px;
