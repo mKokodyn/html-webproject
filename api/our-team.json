@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Mary Stone",
+    "imageSource": "./img/about-page-photo/team-photo/carousel-mary-stone-gourmet-chef.webp",
+    "role": "Gourmet Chef"
+  },
+  {
+    "id": "2",
+    "name": "John Palmer",
+    "imageSource": "./img/about-page-photo/team-photo/carousel-john-palmer-sauce-chef.webp",
+    "role": "Sauce Chef"
+  },
+  {
+    "id": "3",
+    "name": "Jessica Clower",
+    "imageSource": "./img/about-page-photo/team-photo/carousel-jessica-clower-meat-specialist.webp",
+    "role": "Meat Specialist"
+  },
+  {
+    "id": "4",
+    "name": "Helen Smith",
+    "imageSource": "./img/about-page-photo/team-photo/carousel-helen-smith-burger-master.webp",
+    "role": "Burger Master"
+  }
+]

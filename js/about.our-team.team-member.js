@@ -1,4 +1,6 @@
+
 let offset = 0;
+const imageSize = 256;
 const sliderLine = document.querySelector(".our-team__slider__line");
 let btnNext = document.querySelector(".btn-next");
 let btnPrev = document.querySelector(".btn-prev");
@@ -13,26 +15,34 @@ window.addEventListener('load', getSlidesToShow);
 window.addEventListener("load", positionButtons);
 window.addEventListener("resize", positionButtons);
 
+if (document.readyState === "complete") {
+    getSlidesToShow();
+    positionButtons();
+} else {
+    document.addEventListener("DOMContentLoaded", positionButtons);
+    document.addEventListener("DOMContentLoaded", getSlidesToShow);
+}
+
 function NextSlide() {
 
     if (slidesOnPage === 1 && sliderLine.style.left != "-768px") {
-        offset = offset + 256;
+        offset = offset + imageSize;
         sliderLine.style.left = -offset + "px";
     }
 
     if (slidesOnPage === 2 && sliderLine.style.left != "-512px") {
-        offset = offset + 256;
+        offset = offset + imageSize;
         sliderLine.style.left = -offset + "px";
     }
 
     if (slidesOnPage == 3 && sliderLine.style.left != "-256px") {
-        offset = offset + 256;
+        offset = offset + imageSize;
         sliderLine.style.left = -offset + "px";
     }
 }
 
 function PreviousSlide() {
-    offset = offset - 256;
+    offset = offset - imageSize;
     if (offset < 0) {
         offset = 0;
     }
@@ -51,27 +61,23 @@ function getSlidesToShow() {
 function reloadCarousel() {
 
     let leftPosition = sliderLine.style.left;
+
     if(slidesOnPage === 2 && leftPosition === "-768px"){
-        offset = offset - 256;
+        offset = offset - imageSize;
         sliderLine.style.left = "-512px";
     }
     if(slidesOnPage === 3 && leftPosition === "-512px"){
-        offset = offset - 256;
+        offset = offset - imageSize;
         sliderLine.style.left = "-256px";
     }
-
 }
-
 
 function positionButtons() {
     
-
     if (!slider || !btnPrev || !btnNext) return;
 
-    // Отримуємо висоту каруселі
     const sliderHeight = slider.offsetTop;
 
-    // Встановлюємо кнопки по центру каруселі
     btnPrev.style.top = `${sliderHeight + slider.offsetHeight/2}px`;
     
     let paddingRight = parseInt(window.getComputedStyle(document.querySelector('.carousel__image')).getPropertyValue('padding-right'));
@@ -82,7 +88,7 @@ function positionButtons() {
 
     btnNext.style.top = `${sliderHeight + slider.offsetHeight/2}px`;
     btnNext.style.left = `${slider.offsetWidth + slider.offsetLeft - buttonNextOffset}px`;
-    btnPrev.style.left = `${slider.offsetWidth + slider.offsetLeft - 256 - buttonPrevOffset}px`;
+    btnPrev.style.left = `${slider.offsetWidth + slider.offsetLeft - imageSize - buttonPrevOffset}px`;
     
     if (window.innerWidth >= 768){
         btnPrev.style.left = `${slider.offsetWidth + slider.offsetLeft - 512 - buttonPrevOffset}px`;
@@ -91,6 +97,9 @@ function positionButtons() {
         btnPrev.style.left = `${slider.offsetWidth + slider.offsetLeft - 768 - buttonPrevOffset}px`;
     }
 }
+
+
+
 
 
 
